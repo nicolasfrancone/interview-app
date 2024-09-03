@@ -1,5 +1,8 @@
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const WEBHOOK_URL = process.env.REACT_APP_WEBHOOK_URL;
+
 export const fetchProfileData = async () => {
-  const response = await fetch('https://apli-wi38.onrender.com/api/getSheetData');
+  const response = await fetch(`${API_BASE_URL}/api/getSheetData`);
   if (!response.ok) {
     throw new Error('Failed to fetch profile data');
   }
@@ -7,7 +10,7 @@ export const fetchProfileData = async () => {
 };
 
 export const fetchAvailableSlots = async () => {
-  const response = await fetch('https://apli-wi38.onrender.com/api/getAvailableSlots');
+  const response = await fetch(`${API_BASE_URL}/api/getAvailableSlots`);
   if (!response.ok) {
     throw new Error('Failed to fetch available slots');
   }
@@ -17,7 +20,7 @@ export const fetchAvailableSlots = async () => {
 export const sendInterviewDetails = async (interviewDetails) => {
   console.log('Datos que se enviarán al webhook:', interviewDetails);
 
-  const response = await fetch('https://hook.us1.make.com/xwcrlk3q7t9ys0qprc6nv1h5dy3c1bod', {
+  const response = await fetch(WEBHOOK_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +36,7 @@ export const sendInterviewDetails = async (interviewDetails) => {
 };
 
 export const fetchEventId = async () => {
-  const response = await fetch('https://apli-wi38.onrender.com/api/getEventId', {  
+  const response = await fetch(`${API_BASE_URL}/api/getEventId`, {  
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -53,7 +56,7 @@ export const fetchEventId = async () => {
 export const sendCancelInterview = async (eventId) => {
   console.log('Cancelando entrevista con event_id:', eventId);
 
-  const response = await fetch('https://hook.us1.make.com/xwcrlk3q7t9ys0qprc6nv1h5dy3c1bod', {  
+  const response = await fetch(WEBHOOK_URL, {  
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
