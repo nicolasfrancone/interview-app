@@ -4,7 +4,7 @@ import './AppointmentScheduler.css';
 import DateNavigator from '../DateNavigator';
 import TimeSlotList from '../TimeSlotsList';
 import ConfirmationForm from '../ConfirmationForm/ConfirmationForm';
-import { fetchProfileData, fetchAvailableSlots } from './apiService';
+import { fetchProfileData, fetchAvailableSlots } from '../../services/apiService';
 
 const AppointmentScheduler = () => {
   const [availableDates, setAvailableDates] = useState([]);
