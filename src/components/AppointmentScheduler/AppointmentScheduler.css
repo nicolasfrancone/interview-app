@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic');
+
+.button-time {
+    width: 100%
+}
+
+.button-time__active {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    transition: all .2s ease-out;
+    width: 50%
+}
+
+.button-confirmation {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0
+}
+
+.btn-outline-primary:active,.btn-outline-primary:hover {
+    background-color: #fff!important;
+    border-color: #0084ff!important;
+    color: #0084ff!important
+}
