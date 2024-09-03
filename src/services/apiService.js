@@ -20,6 +20,7 @@ export const fetchAvailableSlots = async () => {
 export const sendInterviewDetails = async (interviewDetails) => {
   console.log('Datos que se enviarán al webhook:', interviewDetails);
 
+  console.log(WEBHOOK_URL)
   const response = await fetch(WEBHOOK_URL, {
     method: 'POST',
     headers: {
